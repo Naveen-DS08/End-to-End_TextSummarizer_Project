@@ -48,14 +48,14 @@ class ConfigurationManager:
             root_dir= config.root_dir,
             data_path= config.data_path, 
             model_ckpt=config.model_ckpt,
-            num_train_epochs=config.num_train_epochs, 
-            warmup_steps=config.warmup_steps,
-            per_device_train_batch_size=config.per_device_train_batch_size,
-            weight_decay=config.weight_decay, 
-            logging_steps=config.logging_steps,
-            evaluation_strategy=config.evaluation_strategy,
-            eval_steps=config.eval_steps,
-            save_steps=config.save_steps,
-            gradient_accumulation_steps=config.gradient_accumulation_steps
+            num_train_epochs=params.num_train_epochs, 
+            warmup_steps=params.warmup_steps,
+            per_device_train_batch_size=params.per_device_train_batch_size,
+            weight_decay=params.weight_decay, 
+            logging_steps=params.logging_steps,
+            evaluation_strategy=params.evaluation_strategy,
+            eval_steps=params.eval_steps,
+            save_steps=params.save_steps,
+            gradient_accumulation_steps=params.gradient_accumulation_steps
         )
         return model_trainier_config

@@ -1,6 +1,6 @@
 import os 
 from src.TextSummarizer.logging import logger
-from src.TextSummarizer.entity import ModelTrainerConfig
+from src.TextSummarizer.config.configuration import ModelTrainerConfig
 
 from transformers import AutoModelForSeq2SeqLM, AutoTokenizer
 from transformers import TrainingArguments, Trainer 
@@ -13,7 +13,7 @@ class ModelTrainer:
         self.config = config 
 
     def train(self):
-        device = "cuda" if torch.cuda.is_availabel() else "cpu"
+        device = "cuda" if torch.cuda.is_available() else "cpu"
         tokenizer = AutoTokenizer.from_pretrained(self.config.model_ckpt)
         model_pegasus = AutoModelForSeq2SeqLM.from_pretrained(self.config.model_ckpt).to(device)
         seq2seq_data_collector = DataCollatorForSeq2Seq(tokenizer=tokenizer, model= model_pegasus)
