@@ -27,6 +27,7 @@ class ModelTrainer:
             num_train_epochs=self.config.num_train_epochs, 
             warmup_steps=self.config.warmup_steps,
             per_device_train_batch_size=self.config.per_device_train_batch_size,
+            per_device_eval_batch_size = self.config.per_device_eval_batch_size,
             weight_decay=self.config.weight_decay, 
             logging_steps=self.config.logging_steps,
             evaluation_strategy=self.config.evaluation_strategy,

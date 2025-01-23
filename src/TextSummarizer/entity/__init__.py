@@ -22,9 +22,18 @@ class ModelTrainerConfig:
     num_train_epochs: int 
     warmup_steps: int 
     per_device_train_batch_size: int 
+    per_device_eval_batch_size: int
     weight_decay: float 
     logging_steps: int 
     evaluation_strategy: str 
     eval_steps: int 
     save_steps: float 
     gradient_accumulation_steps: int 
+
+@dataclass 
+class ModelEvaluationConfig:
+    root_dir: Path 
+    data_path: Path 
+    model_path: Path
+    tokenizer_path: Path
+    metric_file_path: Path 
